@@ -16,7 +16,7 @@ public class EmailService {
 	private static final String RECIPIENT_EMAIL = "info@globalsumi.com";
 
 	public void sendApprovalEmail(String to, Long userId, RegisterEmployee employee) {
-		String approvalLink = "http://localhost:8080/approve?userId=" + userId;
+		String approvalLink = "https://api.globalsumi.com/approve?userId=" + userId;
 
 		String messageBody = "Dear " + employee.getFirstName() + " " + employee.getLastName() + ",\n\n"
 				+ "Thank you for registering. Here are your details:\n\n" + "First Name: " + employee.getFirstName()

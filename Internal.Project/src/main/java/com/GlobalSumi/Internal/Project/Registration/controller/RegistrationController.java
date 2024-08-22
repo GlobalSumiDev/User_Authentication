@@ -20,7 +20,7 @@ import com.GlobalSumi.Internal.Project.Registration.repository.EmployeeRepositor
 import com.GlobalSumi.Internal.Project.Registration.service.EmployeeService;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:4200/")
+@CrossOrigin(origins = {"http://localhost:4200", "https://globalsumi.com"})
 public class RegistrationController {
 
 	@Autowired
@@ -30,18 +30,10 @@ public class RegistrationController {
 	private EmployeeRepository employeeRepository;
 	
 
-//	@PostMapping("/register")
-//	public ResponseEntity<Map<String, String>> registerUser(@RequestBody RegisterEmployee employee) {
-//		Map<String, String> response = new HashMap<>();
-//		try {
-//			employeeService.registerUser(employee);
-//			response.put("responseMessage", "Registration successful");
-//			return new ResponseEntity<>(response, HttpStatus.CREATED);
-//		} catch (Exception e) {
-//			response.put("responseMessage", "Registration failed: " + e.getMessage());
-//			return new ResponseEntity<>(response, HttpStatus.BAD_REQUEST);
-//		}
-//	}
+	  @GetMapping("/api/folders/health")
+	    public ResponseEntity<String> checkHealth() {
+	        return ResponseEntity.ok("Application is running");
+	    }
 	
 	 @PostMapping("/register")
 	    public ResponseEntity<Map<String, String>> registerUser(@RequestBody RegisterEmployee employee) {

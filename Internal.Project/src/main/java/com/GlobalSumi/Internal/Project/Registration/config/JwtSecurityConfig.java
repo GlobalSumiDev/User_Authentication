@@ -48,6 +48,7 @@ public class JwtSecurityConfig {
                         .requestMatchers("/register").permitAll()
                         .requestMatchers("/authenticate").permitAll()
                         .requestMatchers("/approve").permitAll() 
+                        .requestMatchers("/api/folders/health").permitAll() 
                         .requestMatchers(PathRequest.toH2Console()).permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated())
